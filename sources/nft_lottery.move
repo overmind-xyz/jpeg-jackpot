@@ -279,7 +279,7 @@ module overmind::nft_lottery {
     }
 
     /*
-        Runs the lottery to find a winner. Abort if the lottery has already been run, the lottery 
+        Updates the lottery if a winner is found. Abort if the lottery has already been run, the lottery 
         has been cancelled, the lottery has not yet ended, or the lottery has not yet reached the 
         minimum number of participants.
         @param lottery - Lottery object
