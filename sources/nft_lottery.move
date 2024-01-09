@@ -211,7 +211,7 @@ module overmind::nft_lottery {
         @param recipient - Address of recipient of WithdrawalCapability object minted
         @param ctx - Transaction context.
 	*/
-    public entry fun create<T: key + store>(
+    public fun create<T: key + store>(
         nft: T, 
         participants: u64, 
         price: u64, 
@@ -233,7 +233,7 @@ module overmind::nft_lottery {
         @param recipient - Address of recipient for the withdrawal
         @param ctx - Transaction context.
 	*/
-    public entry fun withdraw<T: key + store>(
+    public fun withdraw<T: key + store>(
         lottery_cap: &WithdrawalCapability, 
         lottery: &mut Lottery<T>, 
         recipient: address, 
@@ -253,7 +253,7 @@ module overmind::nft_lottery {
         @param recipient - Address of recipient for the withdrawal
         @param ctx - Transaction context.
 	*/
-    public entry fun buy<T: key + store>(
+    public fun buy<T: key + store>(
         ticket_number: u64, 
         lottery: &mut Lottery<T>, 
         payment: &mut Coin<SUI>, 
@@ -269,7 +269,7 @@ module overmind::nft_lottery {
         @param clock - Clock object
         @param ctx - Transaction context.
 	*/
-    public entry fun run<T: key + store>(
+    public fun run<T: key + store>(
         lottery: &mut Lottery<T>, 
         clock: &Clock, 
         ctx: &mut TxContext
@@ -301,7 +301,7 @@ module overmind::nft_lottery {
         @param ticket - Winning lottery ticket
         @param recipient - Recipient to receive the prize
 	*/
-    public entry fun claim_prize<T: key + store>(
+    public fun claim_prize<T: key + store>(
         lottery: &mut Lottery<T>, 
         ticket: &LotteryTicket, 
         recipient: address
@@ -319,7 +319,7 @@ module overmind::nft_lottery {
         @param recipient - Recipient to receive refund
         @param ctx - Transaction context.
 	*/
-    public entry fun refund<T: key + store>(
+    public fun refund<T: key + store>(
         lottery: &mut Lottery<T>, 
         clock: &Clock, 
         ticket: &LotteryTicket, 
@@ -337,7 +337,7 @@ module overmind::nft_lottery {
         @param recipient - Recipient to receive refund
         @param withdrawal_cap - WithdrawalCapability object
 	*/
-    public entry fun return_nft<T: key + store>(
+    public fun return_nft<T: key + store>(
         lottery: &mut Lottery<T>, 
         clock: &Clock, 
         recipient: address, 
@@ -352,7 +352,7 @@ module overmind::nft_lottery {
         @param lottery - Lottery the ticket was bought for
         @param ticket - Ticket to be burnt
 	*/
-    public entry fun burn_ticket<T: key + store>(
+    public fun burn_ticket<T: key + store>(
         lottery: &mut Lottery<T>,
         ticket: LotteryTicket
     ) {
