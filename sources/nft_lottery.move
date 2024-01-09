@@ -44,7 +44,7 @@ module overmind::nft_lottery {
     use sui::event;
     use sui::sui::SUI;
     use sui::transfer::{Self};
-    use sui::object::{UID, ID};
+    use sui::object::{Self, UID, ID};
     use sui::coin::{Self, Coin};
     use sui::clock::{Self, Clock};
     use sui::tx_context::TxContext;
