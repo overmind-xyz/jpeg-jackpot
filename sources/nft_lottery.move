@@ -75,8 +75,6 @@ module overmind::nft_lottery {
     const ENoPrizeAvailable: u64 = 7;
     /// Not winning number
     const ENotWinningNumber: u64 = 8;
-    /// Ticket Not Available
-    const ETicketNotAvailable: u64 = 9;
     /// Not withing conditions to abort
     const ENotCancelled: u64 = 10;
     /// Invalid number of participants
@@ -1496,7 +1494,7 @@ module overmind::nft_lottery {
         test_scenario::end(scenario_val);
     }
 
-    #[test, expected_failure(abort_code = ETicketNotAvailable)]
+    #[test, expected_failure(abort_code = ETicketNotFound)]
     fun test_refund_failure_with_invalid_ticket_number() {
         let admin = @0xCAFE;
         let player = @0xFACE;
